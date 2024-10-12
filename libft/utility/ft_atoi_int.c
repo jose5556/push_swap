@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:28:53 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/12 03:02:00 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/12 05:15:52 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int	ft_atoi_int(const char *nptr)
 	result = 0;
 	check_value = 1;
 	i = 0;
+	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
+	{
+		i++;
+	}
 	if (nptr[i] == '-')
 	{
 		check_value *= -1;
@@ -28,10 +32,8 @@ int	ft_atoi_int(const char *nptr)
 	}
 	else if (nptr[i] == '+')
 		i++;
-	while (nptr[i])
+	while (nptr[i] >= 48 && nptr[i] <= 57)
 	{
-		if (!ft_isdigit(nptr[i]))
-			return (NULL);
 		result = result * 10 + (nptr[i] - '0');
 		i++;
 	}
