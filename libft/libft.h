@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:57:20 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/12 04:30:04 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/12 05:29:09 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -81,10 +86,5 @@ t_list	*ft_newlst(void *content);
 size_t	ft_lstsize(t_list *lst);
 void	ft_lstadd_front(t_list **lst, void	*content);
 void	ft_lstprint(t_list *lst);
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
 
 #endif
