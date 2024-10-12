@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 20:20:52 by joseoliv          #+#    #+#              #
-#    Updated: 2024/10/12 04:31:30 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/10/12 05:11:10 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = \
 	string/ft_split.c string/ft_strchr.c string/ft_strdup.c string/ft_striteri.c string/ft_strjoin.c string/ft_strlcat.c string/ft_strlcpy.c \
 	string/ft_strlen.c string/ft_strmapi.c string/ft_strncmp.c string/ft_strnstr.c string/ft_strrchr.c string/ft_strtrim.c string/ft_substr.c \
 	string/ft_strjoin_free.c \
-	lists/ft_lstadd_back.c lists/ft_lstclear.c lists/ft_newlst.c lists/ft_lstsize.c lists/ft_lstisprint.c lists/ft_lstadd_front.c \
+	lists/ft_lstadd_back.c lists/ft_lstclear.c lists/ft_newlst.c lists/ft_lstsize.c lists/ft_lstprint.c lists/ft_lstadd_front.c \
 	utility/ft_atoi_int.c utility/ft_itoa.c utility/ft_pow.c utility/ft_atoi_double.c
 
 OBJ = $(SRC:.c=.o)
