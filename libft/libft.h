@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:57:20 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/12 02:21:26 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/12 04:30:04 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ int		count_unsigned(unsigned long long n);
 void	ft_lstadd_back(t_list **lst, void *content);
 void	ft_lstclear(t_list **lst);
 t_list	*ft_newlst(void *content);
+size_t	ft_lstsize(t_list *lst);
+void	ft_lstadd_front(t_list **lst, void	*content);
+void	ft_lstprint(t_list *lst);
 typedef struct s_list
 {
 	void			*content;
