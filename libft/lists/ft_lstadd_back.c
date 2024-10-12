@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 05:10:56 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/12 01:47:12 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/12 02:25:11 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	ft_lstadd_back(t_list **lst, void *content)
 	else
 	{
 		temp = *lst;
-		while (temp->next != *lst)
+		while (temp->next)
 			temp = temp->next;
 		temp->next = new_node;
-		new_node->next = *lst;
+		new_node->next = NULL;
 	}
 }

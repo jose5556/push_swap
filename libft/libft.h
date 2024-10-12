@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:57:20 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/12 01:43:14 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/12 02:21:26 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ int		count(long long n, int base);
 int		ft_putptr_hexa(unsigned long long n);
 int		ft_unsigned_putnbr(unsigned int n);
 int		count_unsigned(unsigned long long n);
-void	ft_lstadd_back(t_list **lst, int content);
+void	ft_lstadd_back(t_list **lst, void *content);
 void	ft_lstclear(t_list **lst);
-t_list	*ft_newlst(int content);
+t_list	*ft_newlst(void *content);
 typedef struct s_list
 {
 	void			*content;

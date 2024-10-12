@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 05:09:52 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/12 01:46:11 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/12 02:23:14 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ t_list	*ft_newlst(void *content)
 	if (!new_node)
 		return (NULL);
 	new_node->content = content;
-	new_node->next = new_node;
+	new_node->next = NULL;
 	return (new_node);
 }
