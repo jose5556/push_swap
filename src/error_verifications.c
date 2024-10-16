@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:38:37 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/16 03:03:48 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/16 04:02:27 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,34 +26,38 @@ static int	ft_numcheck(char *argv)
 	return (1);
 }
 
-static int	have_repetitive_nums(char **argv)
+static int	have_repetitive_nums(char **argv, int argc)
 {
 	int		i;
-	char	*temp;
+	int		j;
 
 	i = 1;
-	while (*argv)
+	while (i < argc)
 	{
-		temp = *argv;
-		while (argv[i])
+		j = i + 1;
+		while (j <= argc)
 		{
-			if (argv[i] == temp)
+			ft_printf("%s\n", argv[j]);
+			if (!ft_strncmp(argv[i], argv[j], ft_strlen(argv[i])))
 				return (1);
-			i++;
+			j++;
 		}
-		argv++;
+		i++;
 	}
 	return (0);
 }
 
 void	error_check(int	argc, char **argv, t_list **stack_a, t_list **stack_b)
 {
+	int	argc2;
+
+	argc2 = argc;
 	while (--argc)
 	{
 		if (!ft_numcheck(argv[argc]))
 			exit_program(stack_a, stack_b);
 	}
-	if (have_repetitive_nums(argv))
+	if (have_repetitive_nums(argv, --argc2))
 		exit_program(stack_a, stack_b);
 }
 
