@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:38:37 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/16 04:45:22 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/16 06:24:44 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	ft_numcheck(char *argv)
 	size_t	i;
 
 	i = 0;
+	if ((argv[i] == '-' || argv[i] == '+') && argv[i+1])
+		i++;
 	while (argv[i])
 	{
 		if (!ft_isdigit(argv[i]))
@@ -37,13 +39,24 @@ static int	have_repetitive_nums(char **argv, int argc)
 		j = i + 1;
 		while (j <= argc)
 		{
-			if (!ft_strncmp(argv[i], argv[j], ft_strlen(argv[i])))
+			if (!ft_strncmp(argv[i], argv[j],
+					ft_strlen(argv[i]) + ft_strlen(argv[j])))
 				return (1);
 			j++;
 		}
 		i++;
 	}
 	return (0);
+}
+
+static void	num_islimited(char **argv)
+{
+	argv++;
+	while (*argv)
+	{
+		ft_atoi(*argv);
+		argv++;
+	}
 }
 
 static void	args_to_lst(t_list **stack_a, char **argv)
@@ -60,7 +73,7 @@ static void	args_to_lst(t_list **stack_a, char **argv)
 	}
 }
 
-void	error_check(int argc, char **argv, t_list **stack_a, t_list **stack_b)
+void	error_check(int argc, char **argv, t_list **stack_a)
 {
 	int	argc2;
 
@@ -68,17 +81,10 @@ void	error_check(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 	while (--argc)
 	{
 		if (!ft_numcheck(argv[argc]))
-			exit_program(stack_a, stack_b);
+			exit_program();
 	}
 	if (have_repetitive_nums(argv, --argc2))
-		exit_program(stack_a, stack_b);
+		exit_program();
+	num_islimited(argv);
 	args_to_lst(stack_a, argv);
-}
-
-void	exit_program(t_list **stack_a, t_list **stack_b)
-{
-	ft_lstclear(stack_a);
-	ft_lstclear(stack_b);
-	ft_printf("%s", ERROR_MESSAGE);
-	exit(EXIT_FAILURE);
 }
