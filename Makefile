@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/12 01:54:02 by joseoliv          #+#    #+#              #
-#    Updated: 2024/10/16 03:54:51 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/10/16 04:06:49 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap.a
 CC = cc -g
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = src/error_verifications.c src/main.c
+SRC = src/errors_handler/error_verifications.c src/main.c
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
