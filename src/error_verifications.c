@@ -6,56 +6,54 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:38:37 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/12 05:27:33 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/16 03:03:48 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int		have_repetitive_nums(t_list *stack_a)
-{
-	t_list	*temp;
-	int		num;
-
-	temp = stack_a;
-	while (temp)
-	{
-		num = stack_a->content;
-		while (stack_a->next)
-		{
-			stack_a = stack_a->next;
-			if (num == stack_a->content)
-				return (1);
-		}
-		temp = temp->next;
-		stack_a = temp;
-	}
-	return (0);
-}
-
 static int	ft_numcheck(char *argv)
 {
-	int	len;
-	
-	len = ft_strlen(--argv);
-	while (len > -1)
+	size_t	i;
+
+	i = 0;
+	while (argv[i])
 	{
-		if (!ft_isdigit(argv[len]))
+		if (!ft_isdigit(argv[i]))
 			return (0);
-		len--;
+		i++;
 	}
 	return (1);
 }
 
+static int	have_repetitive_nums(char **argv)
+{
+	int		i;
+	char	*temp;
+
+	i = 1;
+	while (*argv)
+	{
+		temp = *argv;
+		while (argv[i])
+		{
+			if (argv[i] == temp)
+				return (1);
+			i++;
+		}
+		argv++;
+	}
+	return (0);
+}
+
 void	error_check(int	argc, char **argv, t_list **stack_a, t_list **stack_b)
 {
-	while (argc)
+	while (--argc)
 	{
 		if (!ft_numcheck(argv[argc]))
 			exit_program(stack_a, stack_b);
-		argc--;
 	}
-	if (have_repetitive_num(*stack_a))
+	if (have_repetitive_nums(argv))
 		exit_program(stack_a, stack_b);
 }
 
