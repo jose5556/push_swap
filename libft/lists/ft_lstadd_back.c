@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 05:10:56 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/16 04:26:44 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/16 04:49:05 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ void	ft_lstadd_back(t_list **lst, int content)
 		while (temp->next)
 			temp = temp->next;
 		temp->next = new_node;
-		new_node->next = NULL;
 	}
 }
