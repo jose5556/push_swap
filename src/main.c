@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 02:45:46 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/16 04:51:06 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/16 05:48:09 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 int	main(int argc, char	*argv[])
 {
 	t_list	*stack_a;
-	t_list	*stack_b;
+	//t_list	*stack_b;
 
 	stack_a = NULL;
-	stack_b = NULL;
+	//stack_b = NULL;
 	if (argc < 3)
 		return (1);
-	error_check(argc, argv, &stack_a, &stack_b);
-	ft_lstprint(stack_a);
+	error_check(argc, argv, &stack_a);
 	ft_printf("success\n");
 	return (0);
 }
