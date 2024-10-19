@@ -6,34 +6,18 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:38:37 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/16 06:24:44 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/19 06:31:26 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-
-static int	ft_numcheck(char *argv)
-{
-	size_t	i;
-
-	i = 0;
-	if ((argv[i] == '-' || argv[i] == '+') && argv[i+1])
-		i++;
-	while (argv[i])
-	{
-		if (!ft_isdigit(argv[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
 
 static int	have_repetitive_nums(char **argv, int argc)
 {
 	int		i;
 	int		j;
 
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
 		j = i + 1;
@@ -47,16 +31,6 @@ static int	have_repetitive_nums(char **argv, int argc)
 		i++;
 	}
 	return (0);
-}
-
-static void	num_islimited(char **argv)
-{
-	argv++;
-	while (*argv)
-	{
-		ft_atoi(*argv);
-		argv++;
-	}
 }
 
 static void	args_to_lst(t_list **stack_a, char **argv)
@@ -73,18 +47,55 @@ static void	args_to_lst(t_list **stack_a, char **argv)
 	}
 }
 
+static int	ft_numcheck(char **argv)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	i = 0;
+	while (argv[j])
+	{
+		if ((argv[j][i] == '-' || argv[j][i] == '+') && argv[j][i + 1])
+			i++;
+		while (argv[j][i])
+		{
+			if (!ft_isdigit(argv[j][i]))
+				return (0);
+			i++;
+		}
+		j++;
+		i = 0;
+	}
+	return (1);
+}
+
+static void	num_islimited(char **argv, int argc)
+{
+	long	result;
+	int		check_value;
+
+	result = 0;
+	check_value = 1;
+	ft_atoi(argv, argc, result, check_value);
+}
+
 void	error_check(int argc, char **argv, t_list **stack_a)
 {
-	int	argc2;
+	int		i;
+	char	**args;
 
-	argc2 = argc;
-	while (--argc)
-	{
-		if (!ft_numcheck(argv[argc]))
-			exit_program();
-	}
-	if (have_repetitive_nums(argv, --argc2))
-		exit_program();
-	num_islimited(argv);
-	args_to_lst(stack_a, argv);
+	i = 0;
+	if (argc == 1)
+		args = ft_split(argv[0], ' ');
+	else
+		args = argv;
+	while (args[i])
+		i++;
+	if (!ft_numcheck(args) || have_repetitive_nums(args, --i))
+		exit_program(argc, args);
+	num_islimited(args, argc);
+	args_to_lst(stack_a, args);
+	if (argc == 1)
+		free_args(args);
 }
