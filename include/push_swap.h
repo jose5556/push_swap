@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:40:06 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/16 06:17:31 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/19 06:28:48 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # define ERROR_MESSAGE "Error\n"
 
 void	error_check(int argc, char **argv, t_list **stack_a);
-void	exit_program(void);
-int		ft_atoi(const char *nptr);
+void	exit_program(int flag, char **args);
+void	free_args(char **args);
+void	ft_atoi(char **argv, int argc, long result, int check_value);
 
 #endif
