@@ -6,11 +6,11 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/12 01:54:02 by joseoliv          #+#    #+#              #
-#    Updated: 2024/10/16 06:18:10 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/10/19 04:58:36 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
 
 CC = cc -g
 CFLAGS = -Wall -Wextra -Werror
