@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 02:45:46 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/16 05:48:09 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/19 05:15:18 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(int argc, char	*argv[])
 
 	stack_a = NULL;
 	//stack_b = NULL;
-	if (argc < 3)
+	if (argc < 2)
 		return (1);
-	error_check(argc, argv, &stack_a);
+	error_check(argc - 1, argv + 1, &stack_a);
 	ft_printf("success\n");
 	return (0);
 }
