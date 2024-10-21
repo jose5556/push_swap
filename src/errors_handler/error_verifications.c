@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:38:37 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/19 06:43:05 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:38:12 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	error_check(int argc, char **argv, t_list **stack_a)
 
 	i = 0;
 	if (argc == 1)
-		args = ft_split(argv[0], ' ');
+		args = ft_split(argv[0], " \t\n");
 	else
 		args = argv;
 	while (args[i])
