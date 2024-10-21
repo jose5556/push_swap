@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 05:38:20 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/19 06:28:39 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:27:30 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void	ft_atoi(char **argv, int argc, long result, int check_value)
 	long	j;
 
 	j = 0;
-	i = 0;
 	while (argv[j])
 	{
+		i = 0;
+		result = 0;
 		if (argv[j][i] == '-')
 		{
 			check_value *= -1;
