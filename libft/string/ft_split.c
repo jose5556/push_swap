@@ -6,16 +6,16 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:11:02 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/11 02:59:29 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:42:36 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static char	**fill_letters(char const *s, char c, char **result);
-static int	count_words(char const *s, char c);
+static char	**fill_letters(char const *s, char *c, char **result);
+static int	count_words(char const *s, char *c);
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char *c)
 {
 	char	**result;
 	int		words;
@@ -30,7 +30,7 @@ char	**ft_split(char const *s, char c)
 	return (result);
 }
 
-static char	**fill_letters(char const *s, char c, char **result)
+static char	**fill_letters(char const *s, char *c, char **result)
 {
 	int	i;
 	int	j;
@@ -41,9 +41,9 @@ static char	**fill_letters(char const *s, char c, char **result)
 	k = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
+		while (s[i] && (s[i] == c[0] || s[i] == c[1] || s[i] == c[2]))
 			i++;
-		while (s[i] && s[i] != c)
+		while (s[i] && (s[i] != c[0] && s[i] != c[1] && s[i] != c[2]))
 		{
 			j++;
 			i++;
@@ -59,7 +59,7 @@ static char	**fill_letters(char const *s, char c, char **result)
 	return (result);
 }
 
-static int	count_words(char const *s, char c)
+static int	count_words(char const *s, char *c)
 {
 	int	i;
 	int	j;
@@ -68,11 +68,11 @@ static int	count_words(char const *s, char c)
 	j = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
+		while (s[i] && (s[i] == c[0] || s[i] == c[1] || s[i] == c[2]))
 			i++;
 		if (s[i])
 			j++;
-		while (s[i] && s[i] != c)
+		while (s[i] && (s[i] != c[0] && s[i] != c[1] && s[i] != c[2]))
 			i++;
 	}
 	return (j);
