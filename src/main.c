@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 02:45:46 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/19 05:15:18 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:11:13 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int	main(int argc, char	*argv[])
 		return (1);
 	error_check(argc - 1, argv + 1, &stack_a);
 	ft_printf("success\n");
+	ft_lstclear(&stack_a);
 	return (0);
 }
