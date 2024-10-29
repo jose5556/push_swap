@@ -6,11 +6,11 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 05:10:56 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/16 04:49:05 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/29 22:14:52 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../include/push_swap.h"
 
 void	ft_lstadd_back(t_list **lst, int content)
 {
@@ -27,6 +27,7 @@ void	ft_lstadd_back(t_list **lst, int content)
 		temp = *lst;
 		while (temp->next)
 			temp = temp->next;
+		new_node->previous = temp;
 		temp->next = new_node;
 	}
 }

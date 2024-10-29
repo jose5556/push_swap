@@ -6,11 +6,11 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 05:11:23 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/12 02:23:46 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:46:10 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../include/push_swap.h"
 
 void	ft_lstclear(t_list **lst)
 {

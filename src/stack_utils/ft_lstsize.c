@@ -6,11 +6,11 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 04:26:49 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/16 06:13:17 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:46:15 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../../include/push_swap.h"
 
 size_t	ft_lstsize(t_list *lst)
 {
