@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:57:20 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/21 14:37:12 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:34:20 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@
 # include <stdarg.h>
 # include <limits.h>
 
-typedef struct s_list
-{
-	int				content;
-	struct s_list	*next;
-}	t_list;
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -81,11 +76,5 @@ int		count(long long n, int base);
 int		ft_putptr_hexa(unsigned long long n);
 int		ft_unsigned_putnbr(unsigned int n);
 int		count_unsigned(unsigned long long n);
-void	ft_lstadd_back(t_list **lst, int content);
-void	ft_lstclear(t_list **lst);
-t_list	*ft_newlst(int content);
-size_t	ft_lstsize(t_list *lst);
-void	ft_lstadd_front(t_list **lst, int content);
-void	ft_lstprint(t_list *lst);
 
 #endif
