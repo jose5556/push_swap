@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:40:06 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/01 01:09:55 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/01 01:12:44 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ int		is_sorted(t_list *stack_a);
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);
 void	rr(t_list **stack_a, t_list **stack_b);
+
+void	rra(t_list **stack_a);
+void	rrb(t_list **stack_b);
+void 	rrr(t_list **stack_a, t_list **stack_b);
 
 void	ft_lstadd_back(t_list **lst, int content);
 void	ft_lstclear(t_list **lst);
