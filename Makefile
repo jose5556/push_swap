@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/12 01:54:02 by joseoliv          #+#    #+#              #
-#    Updated: 2024/10/19 04:58:36 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/11/01 00:51:26 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ CC = cc -g
 CFLAGS = -Wall -Wextra -Werror
 
 SRC =	src/errors_handler/error_verifications.c src/main.c src/utils/ft_atoi.c \
-		src/errors_handler/exit.c
+		src/errors_handler/exit.c src/instructions/rotate.c src/stack_utils/ft_lstadd_back.c \
+		src/stack_utils/ft_lstclear.c src/stack_utils/ft_lstprint.c src/stack_utils/ft_lstsize.c \
+		src/stack_utils/ft_newlst.c src/utils/is_sorted.c src/stack_utils/ft_lstlast.c
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
