@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 00:51:44 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/01 02:26:34 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/01 03:55:08 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@ static void	reverse_rotate(t_list **stack)
 {
 	t_list	*first;
 	t_list	*last;
-	t_list	*temp;
 
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
 	last = ft_lstlast(*stack);
 	first = *stack;
-	temp = last->previous;
-	temp->next = NULL;
+	last->previous->next = NULL;
 	last->previous = NULL;
 	last->next = first;
 	first->previous = last;
