@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 21:15:22 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/29 21:20:27 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:19:37 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	is_sorted(t_list *stack_a)
 	while (stack_a->next)
 	{
 		temp = stack_a->next;
-		if (stack_a->content > temp->content)
+		if (stack_a->num > temp->num)
 			return (0);
-		stack_a = stack_a->content;
+		stack_a = stack_a->next;
 	}
 	return (1);
 }
