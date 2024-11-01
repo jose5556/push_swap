@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:40:06 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/01 03:26:31 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/01 04:44:05 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,14 @@ void	pb(t_list **stack_a, t_list **stack_b);
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
 
+void	sort_three(t_list **stack);
+
 void	ft_lstadd_back(t_list **lst, int content);
 void	ft_lstclear(t_list **lst);
 t_list	*ft_newlst(int content);
 size_t	ft_lstsize(t_list *lst);
 void	ft_lstprint(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
+t_list	*find_biggest_num(t_list *stack);
+
 #endif
