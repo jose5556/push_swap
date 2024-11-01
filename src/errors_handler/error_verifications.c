@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:38:37 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/21 14:38:12 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/10/29 23:22:54 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ static int	have_repetitive_nums(char **argv, int argc)
 
 static void	args_to_lst(t_list **stack_a, char **argv)
 {
-	int		temp;
+	int		num;
 	int		i;
 
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
-		temp = ft_atoi_int(argv[i]);
-		ft_lstadd_back(stack_a, temp);
+		num = ft_atoi_int(argv[i]);
+		ft_lstadd_back(stack_a, num);
 		i++;
 	}
 }
