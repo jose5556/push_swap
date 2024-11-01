@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 22:52:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/01 02:26:42 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/01 04:01:02 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	rotate(t_list **stack)
 	last = ft_lstlast(*stack);
 	last->next = first;
 	first->previous = last;
-	*stack = (*stack)->next;
+	*stack = first->next;
 	first->next = NULL;
 	(*stack)->previous = NULL;
 }
