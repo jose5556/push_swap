@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 05:00:23 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 05:47:21 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/04 06:11:35 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,20 @@ static void	rotate(t_list **a, t_list **b, t_list *move, int flag)
 		else
 			rrr(a, b);
 	}
-	set_index()
+	set_index(a);
+	set_index(b);
 }
 
 void	move_to_b(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*to_move;
-	int		is_above_medium;
 
 	to_move = find_cheapest(*stack_a);
 	if (to_move->above_median && to_move->target_node->above_median)
 		rotate(stack_a, stack_b, to_move, 1);
 	if (!(to_move->above_median) && (!to_move->target_node->above_median))
-		rotate(stack_a, stack_b, to_move, 0)
+		rotate(stack_a, stack_b, to_move, 0);
+	super_mini_sort(stack_a, to_move, 0);
+	super_mini_sort(stack_b, to_move->target_node, 1);
+	pb(stack_a, stack_b);
 }
