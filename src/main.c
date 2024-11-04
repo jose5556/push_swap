@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 02:45:46 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/01 04:46:01 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/01 04:49:21 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,3 @@ int	main(int argc, char	*argv[])
 }
 
 //write (1, "l", 1);
-
-/* 		
-		else if (size == 3)
-			//TODO
-		else
-			//TODO */
