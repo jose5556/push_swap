@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:40:06 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 05:45:34 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/04 06:10:25 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	sb(t_list **stack_b);
 
 void	sort_three(t_list **stack);
 void	sort_stack(t_list **stack_a, t_list **stack_b);
+void	super_mini_sort(t_list **stack, t_list *to_move, int flag);
 
 void	ft_lstadd_back(t_list **lst, int content);
 void	ft_lstclear(t_list **lst);
