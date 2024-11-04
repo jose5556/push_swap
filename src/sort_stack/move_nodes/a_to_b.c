@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 05:00:23 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 06:11:35 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/04 06:14:22 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	rotate(t_list **a, t_list **b, t_list *move, int flag)
 	set_index(b);
 }
 
-void	move_to_b(t_list **stack_a, t_list **stack_b)
+void	move_a_to_b(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*to_move;
 

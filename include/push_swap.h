@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:40:06 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 06:10:25 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/04 06:14:43 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	free_args(char **args);
 void	init_a(t_list **stack_a, t_list **stack_b);
 void	init_b(t_list **stack_b, t_list **stack_a);
 
-void	move_to_b(t_list **stack_a, t_list **stack_b);
-void	move_to_a(t_list **stack_b, t_list **stack_a);
+void	move_a_to_b(t_list **stack_a, t_list **stack_b);
+void	move_b_to_a(t_list **stack_b, t_list **stack_a);
 
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);

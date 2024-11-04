@@ -6,13 +6,13 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 05:04:32 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 05:45:15 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/04 06:14:51 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/push_swap.h"
 
-void	move_to_a(t_list **stack_b, t_list **stack_a)
+void	move_b_to_a(t_list **stack_b, t_list **stack_a)
 {
 	
 }
