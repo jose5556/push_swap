@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/12 01:54:02 by joseoliv          #+#    #+#              #
-#    Updated: 2024/11/01 04:43:52 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/11/04 03:04:10 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC =	src/errors_handler/error_verifications.c src/main.c src/utils/ft_atoi.c \
 		src/stack_utils/ft_lstclear.c src/stack_utils/ft_lstprint.c src/stack_utils/ft_lstsize.c \
 		src/stack_utils/ft_newlst.c src/utils/is_sorted.c src/stack_utils/ft_lstlast.c \
 		src/instructions/reverse_rotate.c src/instructions/push.c src/instructions/swap.c \
-		src/stack_utils/find_biggest_num.c src/instructions/sort_three.c
+		src/stack_utils/find_biggest_num.c src/sort_stack/sort_three.c src/sort_stack/sort_large_stack \
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
