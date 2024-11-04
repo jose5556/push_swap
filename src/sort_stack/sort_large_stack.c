@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 03:03:22 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 05:04:14 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/04 06:16:39 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,10 @@ void	sort_stack(t_list **stack_a, t_list **stack_b)
 	{
 		init_a(stack_a, stack_b);
 		move_a_to_b(stack_a, stack_b);
+	}
+	sort_three(stack_a);
+	while (*stack_b)
+	{
+		init_b(stack_b, stack_a);
 	}
 }
