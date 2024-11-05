@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 22:52:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 03:05:35 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 05:03:38 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	rb(t_list **stack_b)
 	rotate(stack_b);
 }
 
-void rr(t_list **stack_a, t_list **stack_b)
+void	rr(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) > 2 && stack_a)
 		rotate(stack_a);

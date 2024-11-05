@@ -6,12 +6,11 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 03:34:34 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 04:56:50 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 05:05:35 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/push_swap.h"
-
 
 static void	set_target(t_list *stack_a, t_list *stack_b)
 {
@@ -21,8 +20,8 @@ static void	set_target(t_list *stack_a, t_list *stack_b)
 
 	while (stack_a)
 	{
-		diff = LONG_MAX;  // Initialize to LONG_MAX to find the smallest difference
-		target = NULL;    // Reset target for each node in stack_a
+		diff = LONG_MAX;
+		target = NULL;
 		b = stack_b;
 		while (b)
 		{
@@ -33,17 +32,13 @@ static void	set_target(t_list *stack_a, t_list *stack_b)
 			}
 			b = b->next;
 		}
-		// If no suitable target found, use the largest node in stack_b
 		if (diff == LONG_MAX)
 			stack_a->target_node = find_biggest_num(stack_b);
 		else
 			stack_a->target_node = target;
-
 		stack_a = stack_a->next;
 	}
 }
-
-
 
 static void	set_cost(t_list *stack_a, t_list *stack_b)
 {
@@ -65,7 +60,7 @@ static void	set_cost(t_list *stack_a, t_list *stack_b)
 	}
 }
 
-static void set_cheapest(t_list *stack_a)
+static void	set_cheapest(t_list *stack_a)
 {
 	long	temp_cost;
 	t_list	*cheapest_node;
@@ -77,7 +72,7 @@ static void set_cheapest(t_list *stack_a)
 		{
 			temp_cost = stack_a->cost;
 			cheapest_node = stack_a;
-		}	
+		}
 		stack_a = stack_a->next;
 	}
 	cheapest_node->cheapest = 1;
@@ -89,5 +84,5 @@ void	init_a(t_list *stack_a, t_list *stack_b)
 	set_index(stack_b);
 	set_target(stack_a, stack_b);
 	set_cost(stack_a, stack_b);
-	set_cheapest(stack_a);//
+	set_cheapest(stack_a);
 }

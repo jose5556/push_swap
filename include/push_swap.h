@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:40:06 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 03:52:05 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 05:06:51 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	rb(t_list **stack_b);
 void	rr(t_list **stack_a, t_list **stack_b);
 void	rra(t_list **stack_a);
 void	rrb(t_list **stack_b);
-void 	rrr(t_list **stack_a, t_list **stack_b);
+void	rrr(t_list **stack_a, t_list **stack_b);
 void	pa(t_list **stack_b, t_list **stack_a);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	sa(t_list **stack_a);
