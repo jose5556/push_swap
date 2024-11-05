@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 06:48:25 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 06:50:09 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 03:59:32 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 t_list	*find_smallest_num(t_list *stack)
 {
-	t_list	*temp;
+	t_list	*smallest;
 
-	temp = stack;
+	if (!stack)
+		return (NULL);
+	smallest = stack;
 	while (stack)
 	{
-		if (stack->num < temp->num)
-			temp = stack;
+		if (stack->num < smallest->num)
+			smallest = stack;
 		stack = stack->next;
 	}
-	return (temp);
+	return (smallest);
 }

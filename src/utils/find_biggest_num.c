@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 04:33:18 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 05:39:20 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 04:00:32 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 t_list *find_biggest_num(t_list *stack)
 {
-	t_list *temp;
+	t_list *biggest;
 
-	temp = stack;
-	while(stack)
+	if (!stack)
+		return (NULL);
+	biggest = stack;
+	while (stack)
 	{
-		if (stack->num > temp->num)
-			temp = stack;
+		if (stack->num > biggest->num)
+			biggest = stack;
 		stack = stack->next;
 	}
-	return (temp);
+	return (biggest);
 }
