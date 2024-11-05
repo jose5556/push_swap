@@ -6,37 +6,37 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 03:34:34 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 05:05:35 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 06:13:13 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/push_swap.h"
 
-static void	set_target(t_list *stack_a, t_list *stack_b)
+static void	set_target(t_list *a, t_list *b)
 {
-	t_list	*target;
-	t_list	*b;
-	long	diff;
+	t_list	*current_b;
+	t_list	*target_node;
+	long	best_match_index;
 
-	while (stack_a)
+	while (a)
 	{
-		diff = LONG_MAX;
-		target = NULL;
-		b = stack_b;
-		while (b)
+		best_match_index = LONG_MIN;
+		current_b = b;
+		while (current_b)
 		{
-			if (stack_a->num > b->num && (stack_a->num - b->num) < diff)
+			if (current_b->num < a->num 
+				&& current_b->num > best_match_index)
 			{
-				target = b;
-				diff = stack_a->num - b->num;
+				best_match_index = current_b->num;
+				target_node = current_b;
 			}
-			b = b->next;
+			current_b = current_b->next;
 		}
-		if (diff == LONG_MAX)
-			stack_a->target_node = find_biggest_num(stack_b);
+		if (best_match_index == LONG_MIN)
+			a->target_node = find_biggest_num(b);
 		else
-			stack_a->target_node = target;
-		stack_a = stack_a->next;
+			a->target_node = target_node;
+		a = a->next;
 	}
 }
 
