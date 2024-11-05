@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 02:23:08 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/01 02:57:45 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 01:45:46 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	pa(t_list **stack_b, t_list **stack_a)
 {
 	if (!stack_b || !(*stack_b))
 		return ;
+	ft_printf("pa\n");
 	push(stack_b, stack_a);
 }
 
@@ -39,5 +40,6 @@ void	pb(t_list **stack_a, t_list **stack_b)
 {
 	if (!stack_a || !(*stack_a))
 		return ;
+	ft_printf("pb\n");
 	push(stack_a, stack_b);
 }
