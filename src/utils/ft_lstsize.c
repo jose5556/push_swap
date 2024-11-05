@@ -6,15 +6,15 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 04:26:49 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 05:06:05 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 05:21:44 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-size_t	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
+	int	i;
 
 	if (!lst)
 		return (0);
