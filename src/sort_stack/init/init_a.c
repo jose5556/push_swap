@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 03:34:34 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 03:49:55 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 04:56:50 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,29 @@ static void	set_target(t_list *stack_a, t_list *stack_b)
 
 	while (stack_a)
 	{
-		diff = LONG_MIN;
+		diff = LONG_MAX;  // Initialize to LONG_MAX to find the smallest difference
+		target = NULL;    // Reset target for each node in stack_a
 		b = stack_b;
 		while (b)
 		{
-			if (stack_a->num > b->num && stack_a->num - b->num < diff)
+			if (stack_a->num > b->num && (stack_a->num - b->num) < diff)
 			{
 				target = b;
 				diff = stack_a->num - b->num;
 			}
 			b = b->next;
 		}
-		if (diff == LONG_MIN)
-			target = find_biggest_num(stack_b);
+		// If no suitable target found, use the largest node in stack_b
+		if (diff == LONG_MAX)
+			stack_a->target_node = find_biggest_num(stack_b);
 		else
 			stack_a->target_node = target;
+
 		stack_a = stack_a->next;
 	}
 }
+
+
 
 static void	set_cost(t_list *stack_a, t_list *stack_b)
 {
@@ -84,5 +89,5 @@ void	init_a(t_list *stack_a, t_list *stack_b)
 	set_index(stack_b);
 	set_target(stack_a, stack_b);
 	set_cost(stack_a, stack_b);
-	set_cheapest(stack_a);
+	set_cheapest(stack_a);//
 }
