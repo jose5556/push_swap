@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 04:17:47 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/01 04:44:37 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 04:21:13 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	sort_three(t_list **stack)
 	biggest_num = find_biggest_num(*stack);
 	if (biggest_num == *stack)
 		ra(stack);
-	else if (biggest_num == (*stack)->next)
+	else if ((*stack)->next == biggest_num)
 		rra(stack);
 	if ((*stack)->num > (*stack)->next->num)
 		sa(stack);
