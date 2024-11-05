@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 05:00:23 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 04:16:32 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 05:42:56 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	move_a_to_b(t_list **stack_a, t_list **stack_b)
 		rotate(stack_a, stack_b, to_move, 0);
 	else if (!(to_move->above_median) && !(to_move->target_node->above_median))
 		rotate(stack_a, stack_b, to_move, 1);
-	super_mini_sort(stack_a, to_move, 0);
 	super_mini_sort(stack_b, to_move->target_node, 1);
+	super_mini_sort(stack_a, to_move, 0);
 	pb(stack_a, stack_b);
 }
