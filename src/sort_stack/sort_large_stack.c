@@ -6,11 +6,12 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 03:03:22 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 04:51:00 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 06:01:08 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
 
 void	sort_stack(t_list **stack_a, t_list **stack_b)
 {
