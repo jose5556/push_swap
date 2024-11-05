@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 02:45:46 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 01:54:27 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 06:13:58 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char	*argv[])
 	{
 		size = ft_lstsize(stack_a);
 		if (size == 2)
-			ra(&stack_a);
+			sa(&stack_a);
 		else if (size == 3)
 			sort_three(&stack_a);
 		else
@@ -36,5 +36,3 @@ int	main(int argc, char	*argv[])
 	ft_lstclear(&stack_a);
 	return (0);
 }
-
-//write (1, "l", 1);
