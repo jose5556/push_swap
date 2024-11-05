@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:40:06 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 05:06:51 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 05:22:15 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	super_mini_sort(t_list **stack, t_list *to_move, int flag);
 void	ft_lstadd_back(t_list **lst, int content);
 void	ft_lstclear(t_list **lst);
 t_list	*ft_newlst(int content);
-size_t	ft_lstsize(t_list *lst);
+int		ft_lstsize(t_list *lst);
 void	ft_lstprint(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*find_biggest_num(t_list *stack);
