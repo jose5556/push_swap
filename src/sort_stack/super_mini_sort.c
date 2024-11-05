@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 06:01:17 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 06:10:09 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 03:34:42 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	super_mini_sort(t_list **stack, t_list *to_move, int flag)
 {
-	while (stack != to_move)
+	while (*stack != to_move)
 	{
 		if (!flag)
 		{
@@ -23,7 +23,7 @@ void	super_mini_sort(t_list **stack, t_list *to_move, int flag)
 			else
 				rra(stack);
 		}
-		else
+		else if (flag)
 		{
 			if (to_move->above_median)
 				rb(stack);
