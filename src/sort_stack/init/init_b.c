@@ -6,42 +6,40 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 05:43:32 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/04 06:57:45 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/05 03:51:36 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/push_swap.h"
 
-static void	set_target_b(t_list *a, t_list *b)
+static void	set_target(t_list *stack_a, t_list *stack_b)
 {
-	t_list	*current_a;
-	t_list	*target_node;
-	long	best_match_index;
+	t_list	*target;
+	t_list	*a;
+	long	diff;
 
-	while (b)
+	while (stack_b)
 	{
-		best_match_index = LONG_MAX;
-		current_a = a;
-		while (current_a)
+		diff = LONG_MIN;
+		a = stack_a;
+		while (a)
 		{
-			if (current_a->num > b->num 
-				&& current_a->num < best_match_index)
+			if (stack_b->num < a->num && a->num - stack_b->num < diff)
 			{
-				best_match_index = current_a->num;
-				target_node = current_a;
+				diff = a->num;
+				target = a;
 			}
-			current_a = current_a->next;
+			a = a->next;
 		}
-		if (best_match_index == LONG_MAX)
-			b->target_node = find_smallest_num(a);
+		if (diff == LONG_MIN)
+			a->target_node = find_smallest_num(a);
 		else
-			b->target_node = target_node;
-		b = b->next;
+			a->target_node = target;
+		stack_b = stack_b->next;
 	}
 }
 
-
-void	init_b(t_list **stack_b, t_list **stack_a)
+void	init_b(t_list *stack_b, t_list *stack_a)
 {
 	set_index(stack_a);
 	set_index(stack_b);
