@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 22:52:35 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/06 07:10:11 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/06 07:20:40 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	ra(t_list **stack_a, int flag)
 {
 	if (ft_lstsize(*stack_a) < 2 || !stack_a)
 		return ;
-	ft_printf("ra\n");
+	if (flag)
+		ft_printf("ra\n");
 	rotate(stack_a);
 }
 
