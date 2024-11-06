@@ -6,17 +6,17 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 06:07:27 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/06 06:14:37 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/06 08:08:58 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/checker.h"
 
-t_simple_list	*ft_new_simple_lst(char *content)
+t_simple_list	*ft_simple_newlst(char *content)
 {
 	t_simple_list *new_node;
 
-	new_node = (t_list *) malloc(sizeof(t_list));
+	new_node = (t_simple_list *) malloc(sizeof(t_simple_list));
 	if (!new_node)
 		return (NULL);
 	new_node->name = content;
@@ -31,14 +31,14 @@ void	ft_simple_lstadd_back(t_simple_list **lst, char *content)
 
 	if (!lst)
 		return ;
-	new_node = ft_newlst(content);
+	new_node = ft_simple_newlst(content);
 	if (!new_node)
 		return ;
 	if (!(*lst))
 		*lst = new_node;
 	else
 	{
-		last = ft_lstlast(*lst);
+		last = ft_simple_lstlast(*lst);
 		last->next = new_node;
 	}
 }
@@ -48,7 +48,7 @@ void	ft_simple_lstclear(t_simple_list **lst)
 	t_simple_list	*temp;
 	t_simple_list	*next_node;
 
-	if (!(*lst))
+	if (!lst || !(*lst))
 		return ;
 	temp = *lst;
 	while (temp)
@@ -58,4 +58,11 @@ void	ft_simple_lstclear(t_simple_list **lst)
 		temp = next_node;
 	}
 	*lst = NULL;
+}
+
+t_simple_list	*ft_simple_lstlast(t_simple_list *lst)
+{
+	while (lst && lst->next)
+		lst = lst->next;
+	return (lst);
 }
