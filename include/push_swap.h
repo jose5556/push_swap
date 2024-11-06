@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:40:06 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/06 03:07:01 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/06 07:12:11 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,17 @@ void	init_a(t_list *stack_a, t_list *stack_b);
 void	init_b(t_list *stack_b, t_list *stack_a);
 void	move_a_to_b(t_list **stack_a, t_list **stack_b);
 void	move_b_to_a(t_list **stack_b, t_list **stack_a);
-void	ra(t_list **stack_a);
-void	rb(t_list **stack_b);
-void	rr(t_list **stack_a, t_list **stack_b);
-void	rra(t_list **stack_a);
-void	rrb(t_list **stack_b);
-void	rrr(t_list **stack_a, t_list **stack_b);
-void	pa(t_list **stack_b, t_list **stack_a);
-void	pb(t_list **stack_a, t_list **stack_b);
-void	sa(t_list **stack_a);
-void	sb(t_list **stack_b);
+void	ra(t_list **stack_a, int flag);
+void	rb(t_list **stack_b, int flag);
+void	rr(t_list **stack_a, t_list **stack_b, int flag);
+void	rra(t_list **stack_a, int flag);
+void	rrb(t_list **stack_b, int flag);
+void	rrr(t_list **stack_a, t_list **stack_b, int flag);
+void	pa(t_list **stack_b, t_list **stack_a, int flag);
+void	pb(t_list **stack_a, t_list **stack_b, int flag);
+void	sa(t_list **stack_a, int flag);
+void	sb(t_list **stack_b, int flag);
+void	ss(t_list **stack_a, t_list **stack_b, int flag);
 void	sort_three(t_list **stack);
 void	sort_stack(t_list **stack_a, t_list **stack_b);
 void	super_mini_sort(t_list **stack, t_list *to_move, int flag);
