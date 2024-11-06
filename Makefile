@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/12 01:54:02 by joseoliv          #+#    #+#              #
-#    Updated: 2024/11/05 04:15:43 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/11/06 03:18:21 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRC =	src/main.c src/errors_handler/error_verifications.c src/errors_handler/exit.c \
 		src/instructions/push.c src/instructions/reverse_rotate.c src/instructions/rotate.c \
 		src/instructions/swap.c \
-		src/utils/find_biggest_num.c src/utils/find_smallest_num.c src/utils/ft_atoi.c \
+		src/utils/find_specific_num.c src/utils/ft_atoi.c \
 		src/utils/ft_lstadd_back.c src/utils/ft_lstclear.c src/utils/ft_lstlast.c \
 		src/utils/ft_lstprint.c src/utils/ft_lstsize.c src/utils/ft_newlst.c \
 		src/utils/index_aboveline.c src/utils/is_sorted.c \
