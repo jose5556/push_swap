@@ -6,37 +6,37 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 03:34:34 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 06:13:13 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/06 04:43:53 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/push_swap.h"
 
-static void	set_target(t_list *a, t_list *b)
+static void	set_target(t_list *stack_a, t_list *stack_b)
 {
-	t_list	*current_b;
-	t_list	*target_node;
-	long	best_match_index;
+	t_list	*b;
+	t_list	*target;
+	long	diff;
 
-	while (a)
+	while (stack_a)
 	{
-		best_match_index = LONG_MIN;
-		current_b = b;
-		while (current_b)
+		diff = LONG_MIN;
+		b = stack_b;
+		while (b)
 		{
-			if (current_b->num < a->num 
-				&& current_b->num > best_match_index)
+			if (b->num < stack_a->num
+				&& b->num > diff)
 			{
-				best_match_index = current_b->num;
-				target_node = current_b;
+				diff = b->num;
+				target = b;
 			}
-			current_b = current_b->next;
+			b = b->next;
 		}
-		if (best_match_index == LONG_MIN)
-			a->target_node = find_biggest_num(b);
+		if (diff == LONG_MIN)
+			stack_a->target_node = find_biggest_num(stack_b);
 		else
-			a->target_node = target_node;
-		a = a->next;
+			stack_a->target_node = target;
+		stack_a = stack_a->next;
 	}
 }
 
@@ -50,12 +50,12 @@ static void	set_cost(t_list *stack_a, t_list *stack_b)
 	while (stack_a)
 	{
 		stack_a->cost = stack_a->index;
-		if (!(stack_a->above_median))
-			stack_a->cost -= len_a;
-		if (stack_a->target_node->above_median)
+		if (stack_a->above_median == 0)
+			stack_a->cost = len_a - (stack_a->index);
+		if (stack_a->target_node->above_median == 1)
 			stack_a->cost += stack_a->target_node->index;
 		else
-			stack_a->cost += (stack_a->target_node->index - len_b);
+			stack_a->cost += len_b - (stack_a->target_node->index);
 		stack_a = stack_a->next;
 	}
 }
@@ -65,9 +65,11 @@ static void	set_cheapest(t_list *stack_a)
 	long	temp_cost;
 	t_list	*cheapest_node;
 
+	if (!stack_a)
+		return ;
+	temp_cost = LONG_MAX;
 	while (stack_a)
 	{
-		temp_cost = LONG_MAX;
 		if (stack_a->cost < temp_cost)
 		{
 			temp_cost = stack_a->cost;
