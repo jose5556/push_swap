@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 03:11:00 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/05 03:06:03 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/06 07:10:38 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,30 @@ static void	swap(t_list **stack)
 	*stack = second;
 }
 
-void	sa(t_list **stack_a)
+void	sa(t_list **stack_a, int flag)
 {
 	if (ft_lstsize(*stack_a) < 2 || !stack_a)
 		return ;
-	ft_printf("sa\n");
+	if (flag)
+		ft_printf("sa\n");
 	swap(stack_a);
 }
 
-void	sb(t_list **stack_b)
+void	sb(t_list **stack_b, int flag)
 {
 	if (ft_lstsize(*stack_b) < 2 || !stack_b)
 		return ;
-	ft_printf("sb\n");
+	if (flag)
+		ft_printf("sb\n");
 	swap(stack_b);
+}
+
+void	ss(t_list **stack_a, t_list **stack_b, int flag)
+{
+	if (ft_lstsize(*stack_a) > 2 && stack_a)
+		swap(stack_a);
+	if (ft_lstsize(*stack_b) > 2 && stack_b)
+		swap(stack_b);
+	if (flag)
+		ft_printf("ss\n");
 }

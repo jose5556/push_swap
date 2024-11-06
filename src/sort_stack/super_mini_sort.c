@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 06:01:17 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/06 03:06:37 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/06 07:13:34 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ void	super_mini_sort(t_list **stack, t_list *to_move, int flag)
 		if (!flag)
 		{
 			if (to_move->above_median)
-				ra(stack);
+				ra(stack, 1);
 			else
-				rra(stack);
+				rra(stack, 1);
 		}
 		else if (flag)
 		{
 			if (to_move->above_median)
-				rb(stack);
+				rb(stack, 1);
 			else
-				rrb(stack);
+				rrb(stack, 1);
 		}
 	}
 }

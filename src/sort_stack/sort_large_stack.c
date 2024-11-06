@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 03:03:22 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/06 03:21:33 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/06 07:13:12 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sort_stack(t_list **stack_a, t_list **stack_b)
 
 	size = ft_lstsize(*stack_a);
 	if (size-- > 3 && !is_sorted(*stack_a))
-		pb(stack_a, stack_b);
+		pb(stack_a, stack_b, 1);
 	if (size-- > 3 && !is_sorted(*stack_a))
-		pb(stack_a, stack_b);
+		pb(stack_a, stack_b, 1);
 	while (size-- > 3 && !is_sorted(*stack_a))
 	{
 		init_a(*stack_a, *stack_b);

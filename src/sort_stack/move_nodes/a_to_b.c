@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 05:00:23 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/06 03:07:21 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/06 07:12:33 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static void	rotate(t_list **a, t_list **b, t_list *move, int flag)
 	while (*b != move->target_node && *a != move)
 	{
 		if (flag == 0)
-			rr(a, b);
+			rr(a, b, 1);
 		else
-			rrr(a, b);
+			rrr(a, b, 1);
 	}
 	set_index(*a);
 	set_index(*b);
@@ -49,5 +49,5 @@ void	move_a_to_b(t_list **stack_a, t_list **stack_b)
 		rotate(stack_a, stack_b, to_move, 1);
 	super_mini_sort(stack_b, to_move->target_node, 1);
 	super_mini_sort(stack_a, to_move, 0);
-	pb(stack_a, stack_b);
+	pb(stack_a, stack_b, 1);
 }
