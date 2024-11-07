@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:57:20 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/29 21:34:20 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/07 13:25:26 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*ft_strjoin_free_special(char *s1, char *s2);
 char	*filter_buffer(char *buffer);
 char	*read_line(int fd, char *buffer);
 char	*handle_next(char *buffer);
-char	*get_next_line(int fd);
+int		get_next_line(int fd, char **line);
 int		ft_printf(char const *str, ...);
 int		ft_putnbr_hexa(unsigned long long n, char upper);
 int		ft_putchar(char c);
