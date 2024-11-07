@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 05:03:25 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/07 12:36:10 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/07 13:40:58 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,16 @@ int	main(int argc, char *argv[])
 	flag = 0;
 	stack_a = NULL;
 	stack_b = NULL;
+	command = NULL;
 	if (argc < 2)
 		return (1);
 	error_check(argc - 1, argv + 1, &stack_a);
-	while ((command = get_next_line(0)) && command)
+	while (get_next_line(0, &command) > 0)
 	{
 		if (!(exec_command(command, &stack_a, &stack_b)))
 			flag = 1;
 		free(command);
+		command = NULL;
 	}
 	if (is_sorted(stack_a) && !(ft_lstsize(stack_b)) && !flag)
 		exit_checker_success(&stack_a);
