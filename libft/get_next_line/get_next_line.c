@@ -6,25 +6,29 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 16:53:22 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/10/11 03:40:24 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/07 13:44:13 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*get_next_line(int fd)
+int	get_next_line(int fd, char **line)
 {
 	static char	*buffer[FD_MAX];
 	char		*result;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
+	if (fd < 0 || BUFFER_SIZE <= 0 || !line)
+		return (-1);
 	buffer[fd] = read_line(fd, buffer[fd]);
 	if (!buffer[fd])
-		return (NULL);
+		return (0);
 	result = filter_buffer(buffer[fd]);
 	buffer[fd] = handle_next(buffer[fd]);
-	return (result);
+	if (!result)
+		return (-1);
+	*line = ft_strdup(result);
+	free(result);
+	return (1);
 }
 
 char	*filter_buffer(char *buffer)
@@ -84,28 +88,18 @@ char	*read_line(int fd, char *buffer)
 char	*handle_next(char *buffer)
 {
 	char	*result;
-	char	*ptr;
 	int		i;
 
-	ptr = buffer;
-	while (*buffer && *buffer != '\n')
-		buffer++;
-	if (!(*buffer))
-	{
-		free(ptr);
-		return (NULL);
-	}
-	result = ft_calloc(ft_strlen(buffer + 1) + 1, sizeof(char));
-	if (!result)
-	{
-		free (ptr);
-		return (NULL);
-	}
-	buffer++;
 	i = 0;
-	while (*buffer)
-		result[i++] = *buffer++;
-	free (ptr);
+	while (buffer[i] && buffer[i] != '\n')
+		i++;
+	if (!buffer[i])
+	{
+		free(buffer);
+		return (NULL);
+	}
+	result = ft_strdup(buffer + i + 1);
+	free(buffer);
 	return (result);
 }
 
