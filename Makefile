@@ -6,7 +6,7 @@
 #    By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/12 01:54:02 by joseoliv          #+#    #+#              #
-#    Updated: 2024/11/06 08:01:20 by joseoliv         ###   ########.fr        #
+#    Updated: 2024/11/07 11:00:23 by joseoliv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,12 @@ SRC =	src/main.c src/errors_handler/error_verifications.c src/errors_handler/exi
 		src/sort_stack/move_nodes/a_to_b.c src/sort_stack/move_nodes/b_to_a.c \
 		src/sort_stack/sort_large_stack.c src/sort_stack/sort_three.c src/sort_stack/super_mini_sort.c
 
-CHECKER_SRC =	src_bonus/checker.c src_bonus/utils/simple_list_utils.c \
+CHECKER_SRC =	src_bonus/checker.c \
 				src/utils/ft_lstclear.c src/utils/ft_lstadd_back.c src/utils/ft_atoi.c \
 				src/utils/ft_lstlast.c src/utils/ft_newlst.c src/utils/ft_lstsize.c src/utils/is_sorted.c \
 				src/instructions/push.c src/instructions/reverse_rotate.c src/instructions/rotate.c \
-				src/instructions/swap.c \
-				src/errors_handler/error_verifications.c src/errors_handler/exit.c \
+				src/instructions/swap.c src/utils/ft_lstprint.c \
+				src/errors_handler/error_verifications.c src/errors_handler/exit.c src_bonus/exit_bonus.c \
 
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a 
@@ -61,7 +61,7 @@ clean:
 	@make clean -C $(LIBFT_DIR) -s
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(CHECKER)
 	@make fclean -C $(LIBFT_DIR) -s
 
 re: fclean all
