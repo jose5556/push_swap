@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:38:37 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/06 04:18:19 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/07 14:30:19 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	error_check(int argc, char **argv, t_list **stack_a)
 			exit_program(argc, args);
 		i++;
 	}
-	if (i == 1)
+	if (i <= 1)
 		exit_program(argc, args);
 	if (!ft_numcheck(args) || have_repetitive_nums(args, --i))
 		exit_program(argc, args);
