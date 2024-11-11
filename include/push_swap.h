@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 01:40:06 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/07 14:10:00 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:30:24 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ t_list	*find_smallest_num(t_list *stack);
 void	set_index(t_list *stack);
 int		is_sorted(t_list *stack_a);
 void	ft_atoi(char **argv, int argc, long result, int check_value);
+void	handle_one_num_exit(int argc, char **args);
 
 #endif
