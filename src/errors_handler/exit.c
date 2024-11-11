@@ -6,7 +6,7 @@
 /*   By: joseoliv <joseoliv@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 06:14:44 by joseoliv          #+#    #+#             */
-/*   Updated: 2024/11/07 14:09:55 by joseoliv         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:30:15 by joseoliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,11 @@ void	exit_program(int flag, char **args)
 		free_args(args);
 	ft_printf("%s", ERROR_MESSAGE);
 	exit(EXIT_FAILURE);
+}
+
+void	handle_one_num_exit(int argc, char **args)
+{
+	if (argc == 1)
+		free_args(args);
+	exit (EXIT_SUCCESS);
 }
