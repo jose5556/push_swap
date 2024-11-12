@@ -50,20 +50,15 @@ $ make
 
 2. Running the program
 
-To use push_swap, run the executable with a series of integers as arguments:
-
-$ ./push_swap <list_of_integers>
-
-Example:
+To use push_swap, run the executable with a series of integers as arguments, example:
 
 ```shell
-$ ./push_swap 3 2 5 1 4
+$ ./push_swap <list_of_integers>
 ```
 
 The program will output a sequence of operations that will sort the integers in ascending order in stack A.
-Example Output
 
-If you enter 3 2 5 1 4, the output might look like:
+If you enter, for example, 3 2 5 1 4, the output might look like:
 
 ```shell
 pb
