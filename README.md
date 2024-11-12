@@ -18,7 +18,8 @@ The challenge lies in implementing efficient sorting algorithms and strategies t
 # 🔍 Overview
 
 In this project, I implemented a sorting algorithm for stacks with restricted operations. 
-The program is composed of two stacks (A and B) and a set of operations (such as sa, ra, pb, etc.) to sort the stack. 
+The program is composed of two stacks (A and B) and a set of operations 
+(sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr) to sort the stack. 
 It is essential to create a solution that sorts the stack with the fewest operations possible, 
 optimizing for both small and large data sets.
 
