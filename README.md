@@ -30,7 +30,6 @@ optimizing for both small and large data sets.
     Support for both small and very large data sets of numbers
     Clear and organized operation output for easy verification
 
-For more detailed information about the implementation, please see the project subject that is among the uploaded files.
 
 # 🛠️ Usage
 
@@ -71,9 +70,9 @@ Each operation in the sequence manipulates the stack to achieve a sorted order.
 
 # 📌 Note
 
-<h4> Make sure to test various input sizes to verify that the program performs efficiently under different conditions. </h4> 
-<h4> Check out the 42 push_swap subject guide for specific requirements and grading criteria. </h4>
-<h4> In this project i also did a checker to test if the intructions given actually sort a stack properly, just type: </h4>
+- Make sure to test various input sizes to verify that the program performs efficiently under different conditions.
+- Check out the 42 push_swap subject guide for specific requirements and grading criteria.
+- In this project i also did a checker to test if the intructions given actually sort a stack properly, just type:
 
 ```shell
 $ make bonus
